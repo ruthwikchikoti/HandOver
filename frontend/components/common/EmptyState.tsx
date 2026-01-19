@@ -1,0 +1,67 @@
+import React from 'react';
+import { View, Text, StyleSheet } from 'react-native';
+import { colors } from '../../theme/colors';
+import { typography } from '../../theme/typography';
+import { spacing } from '../../theme/spacing';
+import { Button } from './Button';
+
+interface EmptyStateProps {
+  title: string;
+  message?: string;
+  actionLabel?: string;
+  onAction?: () => void;
+  icon?: string;
+}
+
+export const EmptyState: React.FC<EmptyStateProps> = ({
+  title,
+  message,
+  actionLabel,
+  onAction,
+  icon,
+}) => {
+  return (
+    <View style={styles.container}>
+      {icon && <Text style={styles.icon}>{icon}</Text>}
+      <Text style={styles.title}>{title}</Text>
+      {message && <Text style={styles.message}>{message}</Text>}
+      {actionLabel && onAction && (
+        <Button
+          title={actionLabel}
+          onPress={onAction}
+          variant="primary"
+          size="medium"
+          style={styles.button}
+        />
+      )}
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: spacing.xl,
+  },
+  icon: {
+    fontSize: 48,
+    marginBottom: spacing.md,
+  },
+  title: {
+    ...typography.h3,
+    color: colors.textPrimary,
+    textAlign: 'center',
+    marginBottom: spacing.sm,
+  },
+  message: {
+    ...typography.body,
+    color: colors.textSecondary,
+    textAlign: 'center',
+    marginBottom: spacing.lg,
+  },
+  button: {
+    minWidth: 150,
+  },
+});
