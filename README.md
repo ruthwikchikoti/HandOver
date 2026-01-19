@@ -2,6 +2,59 @@
 
 A mobile application for securely managing and conditionally sharing life-critical knowledge with trusted dependents.
 
+## Screenshots
+
+### Authentication
+| Login | Register |
+|:-----:|:--------:|
+| ![Login](screenshots/1.jpeg) | ![Register](screenshots/2.jpeg) |
+
+### Owner Screens
+| Dashboard | Vault Categories | Dependents & Permissions |
+|:---------:|:----------------:|:------------------------:|
+| ![Owner Dashboard](screenshots/3.jpeg) | ![Vault](screenshots/4.jpeg) | ![Dependents](screenshots/5.jpeg) |
+
+| Audit Log |
+|:---------:|
+| ![Audit Log](screenshots/6.jpeg) |
+
+### Dependent Screens
+| Request Access | Access Status (Pending) | Access Status (History) |
+|:--------------:|:-----------------------:|:-----------------------:|
+| ![Request Access](screenshots/10.jpeg) | ![Pending](screenshots/8.jpeg) | ![History](screenshots/7.jpeg) |
+
+### Admin Screens
+| Dashboard | Access Requests | All Users |
+|:---------:|:---------------:|:---------:|
+| ![Admin Dashboard](screenshots/13.jpeg) | ![Requests](screenshots/12.jpeg) | ![Users](screenshots/11.jpeg) |
+
+---
+
+## Features (PRD)
+
+### Core Features (Implemented)
+- ✅ User registration with role selection (Owner/Dependent)
+- ✅ JWT-based authentication with secure password hashing
+- ✅ Knowledge vault with 6 categories (Assets, Liabilities, Insurance, Contacts, Emergency, Notes)
+- ✅ CRUD operations for vault entries
+- ✅ Dependent management with granular category permissions
+- ✅ Inactivity-based access trigger system (configurable 1-365 days)
+- ✅ Access request workflow with reason submission
+- ✅ Admin approval/rejection system with notes
+- ✅ Comprehensive audit logging
+- ✅ Role-based navigation and access control
+- ✅ Read-only vault viewing for approved dependents
+
+### Future Enhancements
+- 🔮 Push notifications for access requests and approvals
+- 🔮 Biometric authentication (fingerprint/face)
+- 🔮 Document/image attachments in vault entries
+- 🔮 Multiple admin support
+- 🔮 Email notifications
+- 🔮 Data export functionality
+
+---
+
 ## The Problem
 
 When someone becomes incapacitated, hospitalized, or passes away, their loved ones often struggle to access critical information like:
@@ -288,8 +341,7 @@ HandOver/
 ├── backend/                   # Express.js server
 │   ├── models/               # MongoDB schemas (User, KnowledgeEntry, etc.)
 │   ├── routes/               # API endpoints
-│   ├── middleware/           # Auth middleware
-│   └── seedTestData.js       # Test data seeder
+│   └── middleware/           # Auth middleware
 ```
 
 ## Getting Started
@@ -318,11 +370,6 @@ Start the server:
 npm start
 ```
 
-Seed test data (optional):
-```bash
-node seedTestData.js
-```
-
 ### Frontend Setup
 
 ```bash
@@ -342,17 +389,11 @@ npx expo start
 - Press `w` for Web Browser
 - Scan QR code with Expo Go app
 
-## Test Accounts
+## Demo Video
 
-After running `node seedTestData.js`:
+[Watch Demo Video](https://your-video-link-here)
 
-| Role | Email | Password | Status |
-|------|-------|----------|--------|
-| Admin | admin@handover.com | admin123 | - |
-| Owner | rajesh.kumar@gmail.com | password123 | Active |
-| Owner | priya.sharma@gmail.com | password123 | Inactive (45 days) |
-| Dependent | ananya.patel@gmail.com | password123 | Has access to Priya's vault |
-| Dependent | vikram.singh@gmail.com | password123 | Pending request for Priya's vault |
+<!-- Add your demo video link above -->
 
 ## API Reference
 
