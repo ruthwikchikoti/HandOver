@@ -456,6 +456,3 @@ npx expo start
 
 Ruthwik Chikoti
 
-## License
-
-Educational project for React Native / Mobile Application Development course.
